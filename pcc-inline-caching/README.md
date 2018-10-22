@@ -38,7 +38,7 @@ $ cf update-service <your-pcc-service-name> -c '{"restart": true}'
 
 ### Step 5 - Deploy `pcc-inline-caching-client` on Pivotal Cloud Foundry
 
-Compile `pcc-inline-caching-client` and `cf push` into your PCF. Make sure it is binded with PCC.
+Modify `manifest.yaml` and `application.properties` for your environment. Compile `pcc-inline-caching-client` and `cf push` into your PCF. Make sure it is binded with PCC.
 
 ## Use Demo
 
