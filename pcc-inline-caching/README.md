@@ -44,6 +44,7 @@ Compile `pcc-inline-caching-client` and `cf push` into your PCF. Make sure it is
 
 The client app has 3 rest endpoints to use:
 
-* `/payment` - accept POST JSON data and save into PCC. `CREATE` event will be captured and async saved into remote MongoDB server.
+* `/authorize` - accept authorize POST JSON data and save into PCC. `CREATE` event will be captured and async saved into remote MongoDB server.
+* `/capture` - accept capture POST JSON data and save into PCC. `CREATE` event will be captured and async saved into remote MongoDB server.
 * `/search?reference=` - look for data by `reference` field. If not found in PCC, load from MongoDB.
 * `/clear` - clean PCC region
