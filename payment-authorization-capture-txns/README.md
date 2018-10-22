@@ -30,11 +30,3 @@ java -jar build/libs/ayden-request-response-0.0.1-SNAPSHOT.jar
 
 - You can alo import the code straight into your IDE: 
 Spring Tool Suite (STS) / IntelliJ IDEA
-
-  
-  
-
-
-
-#### TO DO
-- ADD CQ and Client Subscriptions

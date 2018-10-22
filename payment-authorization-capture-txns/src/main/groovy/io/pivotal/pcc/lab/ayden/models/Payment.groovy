@@ -8,6 +8,7 @@ import javax.persistence.*
 class Payment {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id", updatable = false, nullable = false)
   Long id
 
   Amount amount

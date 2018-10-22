@@ -1,0 +1,50 @@
+---
+spring:
+  profiles: dev
+  data:
+    rest:
+      basePath: /api
+  h2.console.enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true     
+    hibernate:
+      ddl-auto: update 
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 5
+---
+spring:
+  profiles: cloud
+  
+management:
+  endpoints:
+    web:
+      exposure: 
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  info:
+    git:
+      mode: full
+
+info: # add this section
+  build:
+    name: "@application.name@"
+    description: "@application.description@"
+    version: "@application.version@"
+
+---
+spring:
+  profiles: cloud
+
+management:
+  cloudfoundry:
+    enabled: true
+    skip-ssl-validation: true
