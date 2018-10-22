@@ -19,6 +19,12 @@ The Ayden Request Response service has the following APIs:
 `- GET /authorize`         - get authorizations stored in the embedded database on the server side
 `- curl -d "@authorize.txt" -H "Content-Type: application/json" -X POST http://localhost:8080/authorize
 `- curl -d "@capture-payment.txt" -H "Content-Type: application/json" -X POST http://localhost:8080/capture
+
+Here are some test links:
+
+`- https://authorization-capture-api-silly-genet.apps.pcfone.io/browser/index.html#/authorize/4
+`- https://authorization-capture-api-silly-genet.apps.pcfone.io/authorize
+`- https://authorization-capture-api-silly-genet.apps.pcfone.io/capture
   
 #### What you will need
 Checkout the code from https://github.com/wxlund/pad-pcc-demo.git. 
