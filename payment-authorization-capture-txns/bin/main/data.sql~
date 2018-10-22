@@ -1,0 +1,1 @@
+insert into payment (id, currency, value, number, cvc, expiry_month, expiry_year, holder_name, merchant_account, reference) values (1, 'DLR', 3000, "3456", "456", "9", "2018",  "Prasad ",  "MASTER CARD", "1234",)

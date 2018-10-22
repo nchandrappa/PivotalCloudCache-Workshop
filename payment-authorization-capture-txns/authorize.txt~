@@ -1,0 +1,1 @@
+{  "card": {  "number": "1234",  "expiryMonth": "8",  "expiryYear": "2018",  "cvc": "737",  "holderName":"Li Wang"  },  "amount": {"value":2000, "currency": "EUR"},   "reference": "1234E",  "merchantAccount": "VISA"}

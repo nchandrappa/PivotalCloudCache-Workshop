@@ -1,0 +1,8 @@
+{ "originalReference": "PSPR-1011",
+  "modificationAmount": {
+    "value": 500,
+    "currency": "EUR"
+  },
+  "reference": "YMR-1011",
+  "merchantAccount": "MASTER CARD"
+}

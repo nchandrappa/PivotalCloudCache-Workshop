@@ -1,0 +1,1 @@
+{  "card": {  "number": "2345",  "expiryMonth": "9",  "expiryYear": "2018",  "cvc": "456",  "holderName":"Wayne Lund" },  "amount": {"value":3000, "currency": "EUR"},   "reference": "1234E",  "merchantAccount": "MASTER CARD"}
