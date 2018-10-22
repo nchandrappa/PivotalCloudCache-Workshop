@@ -1,0 +1,8 @@
+---
+applications:
+- name: pcc-inline-caching-client
+  random-route: true
+  path: target/pcc-inline-caching-client-0.0.1-SNAPSHOT.jar
+  buildpack: java_buildpack_offline
+  services:
+  - pcc-dev-cluster
