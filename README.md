@@ -8,13 +8,13 @@ Agenda:
 
 * Session 1: Pivotal Cloud Cache (PCC) Essentials
 ** No lab
-*Session 2: Provisioning PCC Cluster and Developer Access
+* Session 2: Provisioning PCC Cluster and Developer Access
 ** Lab 01 - Installation & Developer setup
-*Session 3:  Pivotal Cloud Cache: Essentials:   <<<. Did you realize that session 1 & 3 have the same name but different topics?  I think we should rename this as Pivotal Cloud Cache Architecture Essentials as it covers Topology 
+* Session 3:  Pivotal Cloud Cache: Essentials:   <<<. Did you realize that session 1 & 3 have the same name but different topics?  I think we should rename this as Pivotal Cloud Cache Architecture Essentials as it covers Topology 
 ** No Lab
-*Session 4: Pivotal Cloud Cache: Access Patterns
-**Lab 02 - Accessing PCC
-*Session 5: Effective Querying in PCC
+* Session 4: Pivotal Cloud Cache: Access Patterns
+** Lab 02 - Accessing PCC
+* Session 5: Effective Querying in PCC
 ** Lab 03 - Query PCC
 * Session 6: Server Side Jar Deployments
 ** Lab 04 - deploying server side jar (Li Wang’s demo)
