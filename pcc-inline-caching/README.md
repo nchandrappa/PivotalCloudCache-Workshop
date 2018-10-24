@@ -26,7 +26,7 @@ gfsh> deploy --jar=<caching-server-jar-path>
 
 gfsh> create region --name=item --type=PARTITION_PERSISTENT --async-event-queue-id=item-writebehind-queue --cache-loader=io.pivotal.event.readthrough.ItemCacheLoader
 
-gfsh> create async-event-queue --listener=io.pivotal.event.writebehind.ItemAsyncEventListener --id=item-writebehind-queue --batch-size=10 --batch-time-interval="20" --parallel="false" --dispatcher-threads=1
+gfsh> create async-event-queue --listener=io.pivotal.event.writebehind.ItemAsyncEventListener --id=item-writebehind-queue --batch-size=10 --batch-time-interval="20" --parallel="false" --dispatcher-threads=1 --listener-param=mongoAddress#xx.xx.xx.xx,mongoPort#27017,dbName#test,collectionName#customers
 
 gfsh> configure pdx --auto-serializable-classes=.* --disk-store=DEFAULT
 ```
