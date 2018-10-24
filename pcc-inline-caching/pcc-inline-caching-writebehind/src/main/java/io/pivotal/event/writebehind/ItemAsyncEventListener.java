@@ -13,19 +13,27 @@ import org.apache.geode.pdx.PdxInstance;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
-
-import io.pivotal.util.MongoConnection;
+import com.mongodb.MongoClient;
 
 @SuppressWarnings("deprecation")
 public class ItemAsyncEventListener implements AsyncEventListener {
 
 	private static LogWriter log;
+	
+	private DBCollection itemCollection;
 
 	static {
 		log = CacheFactory.getAnyInstance().getDistributedSystem().getLogWriter();
 	}
 
-	public void init(Properties props) {}
+	public void init(Properties props) {
+		String mongoAddress = props.getProperty("mongoAddress");
+		String mongoPort = props.getProperty("mongoPort");
+		String dbName = props.getProperty("dbName");
+		String collectionName = props.getProperty("collectionName");
+		
+		itemCollection = new MongoClient(mongoAddress, Integer.parseInt(mongoPort)).getDB(dbName).getCollection(collectionName);
+	}
 
 	public void close() {}
 
@@ -48,7 +56,6 @@ public class ItemAsyncEventListener implements AsyncEventListener {
 	}
 	
 	private void insertItem(String jsonString) {
-		DBCollection itemCollection = MongoConnection.getInstance().itemCollection;
 		
 		BasicDBObject doc = new BasicDBObject().parse(jsonString);
 		
