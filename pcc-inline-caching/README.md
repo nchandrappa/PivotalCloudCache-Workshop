@@ -5,7 +5,7 @@ This demo is used to show how inline cache pattern is used in Pivotal Cloud Cach
 ## Built With
 
 * `pcc-inline-caching-client` - sample client that provides rest APIs to interact with PCC.
-* `pcc-inline-caching-server` - deployed on PCC server side to enable write-behind and read-through. 
+* `pcc-inline-caching-server` - deployed on PCC server side to enable write-behind. 
 
 ## Installing
 
@@ -27,10 +27,12 @@ gfsh> configure pdx --auto-serializable-classes=.* --disk-store=DEFAULT
 ```
 $ cf update-service <your-pcc-service-name> -c '{"restart": true}'
 ```
-### Step 4 - Create Region and AsyncQueue
+### Step 4 - Recreate Region and AsyncQueue
 
 ```
-gfsh> create region --name=item --type=PARTITION_PERSISTENT --async-event-queue-id=item-writebehind-queue
+
+
+gfsh> create region --name=Transactions --type=REPLICATE --async-event-queue-id=item-writebehind-queue
 
 gfsh> create async-event-queue --listener=io.pivotal.event.writebehind.ItemAsyncEventListener --id=item-writebehind-queue --batch-size=10 --batch-time-interval="20" --parallel="false" --dispatcher-threads=1 --listener-param=mongoAddress#xx.xx.xx.xx,mongoPort#27017,dbName#test,collectionName#customers
 ```
