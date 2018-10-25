@@ -1,12 +1,9 @@
 ## Environment Setup
 
-### Create Mysql Service Instance
+###### Prerequisities
 
-Pizza store app will make service calls to this mysql instance
-
-```
-cf create-service p.mysql db-small workshop-db
-```
+- CF CLI
+- GFSH CLI
 
 ### Create PCC Instance
 Services can be created through Apps Manager Marketplace or by executing cf cli commands
@@ -39,7 +36,7 @@ cf service-key workshop-pcc devkey
 ###### Step 4: Login into to PCC cli (GFSH)
 
 ```
-connect --use-http=true --url=http://gemfire-xxxx-xxx-xx-xxxx.system.excelsiorcloud.com/gemfire/v1 --user=cluster_operator --password=*******
+gfsh> connect --use-http=true --url=http://gemfire-xxxx-xxx-xx-xxxx.system.excelsiorcloud.com/gemfire/v1 --user=cluster_operator --password=*******
 ```
 
 ###### Step 5: create PCC regions
@@ -47,6 +44,5 @@ connect --use-http=true --url=http://gemfire-xxxx-xxx-xx-xxxx.system.excelsiorcl
 Note: Region name created on PCC server and client should match
 
 ```
-create region --name=customer --type=PARTITION_REDUNDANT_PERSISTENT
-create region --name=pizza_orders --type=PARTITION_REDUNDANT_PERSISTENT
+gfsh> create region --name=TransactionRules --type=REPLICATE_PERSISTENT
 ```

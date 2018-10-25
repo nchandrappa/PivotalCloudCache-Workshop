@@ -1,1 +1,0 @@
-CREATE TABLE IF NOT EXISTS customer (id VARCHAR(50) PRIMARY KEY,   name VARCHAR(50),   email  VARCHAR(50),   address VARCHAR(50),   birthday VARCHAR(50));
