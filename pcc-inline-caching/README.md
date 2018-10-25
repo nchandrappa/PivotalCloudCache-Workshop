@@ -15,25 +15,24 @@ This demo is used to show how inline cache pattern is used in Pivotal Cloud Cach
 gfsh> connect --use-http=true --url=<pcc-gfsh-url> --user=<username> --password=<password>
 ```
 
-### Step 2 - Compile `pcc-inline-caching-server`
-
-Update [MongoConnection](https://github.com/liwang-pivotal/pcc-inline-caching-demo/blob/master/pcc-inline-caching-server/src/main/java/io/pivotal/util/MongoConnection.java) class for your remote MongoDB server.
-
-### Step 3 - Deploy Server Jar using GFSH
+### Step 2 - Deploy Server Jar using GFSH
 
 ```
 gfsh> deploy --jar=<caching-server-jar-path>
 
-gfsh> create region --name=item --type=PARTITION_PERSISTENT --async-event-queue-id=item-writebehind-queue --cache-loader=io.pivotal.event.readthrough.ItemCacheLoader
-
-gfsh> create async-event-queue --listener=io.pivotal.event.writebehind.ItemAsyncEventListener --id=item-writebehind-queue --batch-size=10 --batch-time-interval="20" --parallel="false" --dispatcher-threads=1 --listener-param=mongoAddress#xx.xx.xx.xx,mongoPort#27017,dbName#test,collectionName#customers
-
 gfsh> configure pdx --auto-serializable-classes=.* --disk-store=DEFAULT
 ```
-### Step 4 - Reboot PCC Servers
+### Step 3 - Reboot PCC Servers
 
 ```
 $ cf update-service <your-pcc-service-name> -c '{"restart": true}'
+```
+### Step 4 - Create Region and AsyncQueue
+
+```
+gfsh> create region --name=item --type=PARTITION_PERSISTENT --async-event-queue-id=item-writebehind-queue --cache-loader=io.pivotal.event.readthrough.ItemCacheLoader
+
+gfsh> create async-event-queue --listener=io.pivotal.event.writebehind.ItemAsyncEventListener --id=item-writebehind-queue --batch-size=10 --batch-time-interval="20" --parallel="false" --dispatcher-threads=1 --listener-param=mongoAddress#xx.xx.xx.xx,mongoPort#27017,dbName#test,collectionName#customers
 ```
 
 ### Step 5 - Deploy `pcc-inline-caching-client` on Pivotal Cloud Foundry
