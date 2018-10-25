@@ -1,11 +1,11 @@
 ## Environment Setup
 
-###### Prerequisities
+### Prerequisities
 
 - CF CLI
 - GFSH CLI
 
-### Create PCC Instance
+###### Create PCC Instance
 Services can be created through Apps Manager Marketplace or by executing cf cli commands
 
 ###### Display available PCC plans

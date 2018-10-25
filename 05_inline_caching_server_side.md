@@ -1,6 +1,6 @@
 ## pcc-inline-caching-demo
 
-This demo is used to show how inline cache pattern is used in Pivotal Cloud Cache and MongoDB.
+This demo is used to show how inline cache pattern is used with Pivotal Cloud Cache to sync region data into MongoDB.
 
 ## Built With
 

@@ -2,7 +2,9 @@
 
 Let's incrementally build Payment Transactions API which will showcase various features supported by PCC and Spring Data
 
-#### Step 1: Create a spring boot starter project from https://start.spring.io. Add spring-boot-starter-web dependency.
+#### Step 1: Create a spring boot starter project from https://start.spring.io. 
+
+Add spring-boot-starter-web dependency.
 
 #### Step 2: Create Skeleton PCC Client project
 

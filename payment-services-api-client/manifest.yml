@@ -1,0 +1,7 @@
+---
+applications:
+- name: payment-services-api-client
+  random-route: true
+  path: target/payment-services-api-client-0.0.1-SNAPSHOT.jar
+  services:
+  - pcc-dev-cluster

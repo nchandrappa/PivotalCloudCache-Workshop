@@ -2,7 +2,9 @@
 
 Lets implement CRUD operations against PCC Region using Spring Data Repository.
 
-#### Step 1: Create Domain object for Mock Reference Data TransactionRules. Get the domain objects from payment-services-api-client project
+#### Step 1: Create Domain object for Mock Reference Data TransactionRules. 
+
+Get the domain objects from payment-services-api-client project. Refer - io.pivotal.pad.workshop.paymentservices.domain.TransactionRules
 
 #### Step 2: Implement GemFire repositories for PizzaOrder and Customer domain objects.
 
