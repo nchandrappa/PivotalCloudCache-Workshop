@@ -32,7 +32,7 @@ $ cf update-service <your-pcc-service-name> -c '{"restart": true}'
 ```
 
 
-gfsh> create region --name=Transactions --type=REPLICATE --async-event-queue-id=item-writebehind-queue
+gfsh> create region --name=item --type=REPLICATE --async-event-queue-id=item-writebehind-queue
 
 gfsh> create async-event-queue --listener=io.pivotal.event.writebehind.ItemAsyncEventListener --id=item-writebehind-queue --batch-size=10 --batch-time-interval="20" --parallel="false" --dispatcher-threads=1 --listener-param=mongoAddress#xx.xx.xx.xx,mongoPort#27017,dbName#test,collectionName#customers
 ```
